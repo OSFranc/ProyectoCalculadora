@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oscar Rene Palacios Franco SMSS065523"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <TextView
+        android:id="@+id/lblNum1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Num 1:"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/lblNum2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtNum1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Num 2:" />
+
+    <EditText
+        android:id="@+id/txtNum1"
+        android:inputType="numberDecimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="80dp"/>
+
+    <EditText
+        android:id="@+id/txtNum2"
+        android:inputType="numberDecimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/txtNum1"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtNum2"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:text="Calcular con R. Group"
+        />
+
+    <Button
+        android:id="@+id/btnCalcular2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtNum2"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@+id/btnCalcular"
+        android:text="Calcular con Spinner" />
+
+    <TextView
+        android:id="@+id/lblRespuesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnCalcular"
+        android:layout_marginTop="20dp"
+        android:text="Respuesta: ?"
+        android:layout_marginLeft="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioOpciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@id/lblRespuesta"
+        android:layout_marginTop="20dp">
+
+        <RadioButton
+            android:id="@+id/suma"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUMA"/>
+        <RadioButton
+            android:id="@+id/btnRESTA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RESTA"/>
+        <RadioButton
+            android:id="@+id/btnMULTI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MULTIPLICAR"/>
+        <RadioButton
+            android:id="@+id/btnDIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DIVIDIR"/>
+        <RadioButton
+            android:id="@+id/btnPERCENT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PORCENTAJE"/>
+        <RadioButton
+            android:id="@+id/btnEXPO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXPONENCIACIÓN"/>
+        <RadioButton
+            android:id="@+id/btnFACTO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FACTORIAL"/>
+        <RadioButton
+            android:id="@+id/btnRAIZ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RAIZ"/>
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/spnOpciones"
+        android:entries="@array/spnOptCalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblRespuesta"
+        android:layout_marginLeft="275dp"
+        android:layout_marginTop="25dp">
+    </Spinner>
+
+</RelativeLayout>
