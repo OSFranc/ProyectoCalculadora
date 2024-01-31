@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     Button btnCalc;
     Button btnCalc2;
     RadioGroup opt;
-
     Spinner spnCalc;
 
     @Override
@@ -58,13 +57,14 @@ public class MainActivity extends AppCompatActivity {
                 } else if (checkedRadioButtonId == R.id.btnEXPO) {
                     respuesta = Math.pow(num1,num2);
                 } else if (checkedRadioButtonId == R.id.btnFACTO) {
-                    for (int i = 2; i <= num1; i++) {
-                        respuesta+=num1*i;
+                    double factorial = 1;
+                    for (int i = 1; i <= num1; i++) {
+                        factorial *= i;
+                        respuesta = factorial;
                     }
                 } else if (checkedRadioButtonId == R.id.btnRAIZ) {
                     respuesta = Math.round(Math.pow(num1, 1.0 / num2));
                 }
-                
                 num = findViewById(R.id.lblRespuesta);
                 num.setText("Respuesta: "+ respuesta);
             }
@@ -102,13 +102,14 @@ public class MainActivity extends AppCompatActivity {
                         respuesta = Math.pow(num1,num2);
                         break;
                     case 6:
-                        for (int i = 2; i <= num1; i++) {
-                            respuesta+=num1*i;
+                        double factorial = 1;
+                        for (int i = 1; i <= num1; i++) {
+                            factorial *= i;
+                            respuesta = factorial;
                         }
                         break;
                     case 7:
                         respuesta= Math.round(Math.pow(num1, 1.0 / num2));
-
                         break;
                 }
 
