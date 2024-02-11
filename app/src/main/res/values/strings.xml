@@ -1,13 +1,32 @@
 <resources>
-    <string name="app_name">ProyectoCalculadora</string>
-    <string-array name="spnOptCalc">
-        <item>Suma</item>
-        <item>Resta</item>
-        <item>Multiplicación</item>
-        <item>División</item>
-        <item>Porcentaje</item>
-        <item>Exponenciación</item>
-        <item>Factorial</item>
-        <item>Raíz</item>
+    <string name="app_name">Conversores</string>
+    <string-array name="spnLongitud">
+        <item>Metro</item>
+        <item>Cm</item>
+        <item>Pulgada</item>
+        <item>Pie</item>
+        <item>Vara</item>
+        <item>Yarda</item>
+        <item>Kilometro</item>
+        <item>Milla</item>
+    </string-array>
+    <string-array name="spnAlmacenamiento">
+        <item>Byte</item>
+        <item>Kilobyte</item>
+        <item>Megabyte</item>
+        <item>Gigabyte</item>
+        <item>Terabyte</item>
+        <item>Petabyte</item>
+    </string-array>
+    <string-array name="spnMonedas">
+        <item>Dolar (USD)</item>
+        <item>Euros (EUR)</item>
+        <item>Pesos Mexicanos(MXN)</item>
+        <item>Yen (JPY)</item>
+        <item>Libra Esterlina (GBP)</item>
+        <item>Quetzales(GTQ)</item>
+        <item>Lempira(HNL)</item>
+        <item>Cordobas(NIO)</item>
+
     </string-array>
 </resources>
