@@ -1,13 +1,5 @@
 <resources>
-    <string name="app_name">ProyectoCalculadora</string>
-    <string-array name="spnOptCalc">
-        <item>Suma</item>
-        <item>Resta</item>
-        <item>Multiplicación</item>
-        <item>División</item>
-        <item>Porcentaje</item>
-        <item>Exponenciación</item>
-        <item>Factorial</item>
-        <item>Raíz</item>
-    </string-array>
+    <string name="app_name">Conversores</string>
+
+
 </resources>
