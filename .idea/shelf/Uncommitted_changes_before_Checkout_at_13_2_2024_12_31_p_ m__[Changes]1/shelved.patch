@@ -1,0 +1,109 @@
+Index: app/src/main/java/com/ugb/proyectocalculadora/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ugb.proyectocalculadora;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.RadioGroup;\r\nimport android.widget.Spinner;\r\nimport android.widget.TabHost;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport java.lang.reflect.Array;\r\nimport java.util.ArrayList;\r\n\r\npublic class MainActivity extends AppCompatActivity {\r\n\r\nTabHost tbh;\r\n\r\nTextView TempVal;\r\nSpinner spn;\r\nButton btn;\r\n\r\nconversores miObj = new conversores();\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_main);\r\n\r\n        tbh = findViewById(R.id.tbhConversores);\r\n        tbh.setup();\r\n\r\n        tbh.addTab(tbh.newTabSpec( \"LONG\").setContent(R.id.tabLongitud).setIndicator(\"LONGITUD\", null));\r\n        tbh.addTab(tbh.newTabSpec( \"ALM\").setContent(R.id.tabAlmacenamiento).setIndicator(\"ALMACENAMIENTO\", null));\r\n        tbh.addTab(tbh.newTabSpec( \"MON\").setContent(R.id.tabMonedas).setIndicator(\"MONEDAS\", null));\r\n\r\n        btn=findViewById(R.id.btnConvertirLongitud);\r\n        btn.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                spn = findViewById(R.id.spnALongitud);\r\n                int de = spn.getSelectedItemPosition();\r\n\r\n                spn = findViewById(R.id.spnDeLongitud);\r\n                int a = spn.getSelectedItemPosition();\r\n\r\n\r\n                TempVal = findViewById(R.id.txtCantidadLongitud);\r\n                double cantidad = Double.parseDouble(TempVal.getText().toString());\r\n\r\n                double respuesta = miObj.convertir(0, de, a, cantidad);\r\n                Toast.makeText(getApplicationContext(), \"Respuesta: \" + respuesta, Toast.LENGTH_LONG).show();\r\n            }\r\n        });\r\n\r\n        btn=findViewById(R.id.btnConvertirAlmacenamiento);\r\n\r\n        btn.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n\r\n                spn=findViewById(R.id.spnDeAlmacenamiento);\r\n                int de = spn.getSelectedItemPosition();\r\n\r\n                spn=findViewById(R.id.spnAAlmacenamiento);\r\n                int a = spn.getSelectedItemPosition();\r\n\r\n                TempVal = findViewById(R.id.txtCantidadAlmacenamiento);\r\n                double cantidad = Double.parseDouble(TempVal.getText().toString());\r\n\r\n                double respuesta = miObj.convertir(1, de, a, cantidad);\r\n                Toast.makeText(getApplicationContext(), \"Respuesta: \" + respuesta, Toast.LENGTH_LONG).show();\r\n\r\n            }\r\n        });\r\n\r\n\r\n        btn= findViewById(R.id.btnConvertirMonedas);\r\n        btn.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n\r\n                spn = findViewById(R.id.spnAMonedas);\r\n                int a = spn.getSelectedItemPosition();\r\n\r\n                spn = findViewById(R.id.spnDeMonedas);\r\n                int de = spn.getSelectedItemPosition();\r\n\r\n                TempVal = findViewById(R.id.txtCantidadMonedas);\r\n                double cantidad = Double.parseDouble(TempVal.getText().toString());\r\n\r\n                double respuesta= miObj.convertir(2, de ,a ,cantidad);\r\n                Toast.makeText(getApplicationContext(), \"Respuesta \"+ respuesta, Toast.LENGTH_LONG).show();\r\n\r\n            }\r\n        });\r\n\r\n\r\n    }\r\n}\r\nclass conversores{\r\n    double [][] valores ={\r\n            {1, 100, 39.37, 3.28, 1.193, 1.09361, 0.001,0.000621371},\r\n            {0.000001, 0.001, 1, 1000, 1000000,1000000000},\r\n            {1,1.08,0.058,0.0067,1.26,0.13,0.041,0.027},\r\n    };\r\n    public double convertir (int opcion, int de, int a, double cantidad){\r\n        return valores[opcion][de]*cantidad/valores[opcion][a];\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/ugb/proyectocalculadora/MainActivity.java b/app/src/main/java/com/ugb/proyectocalculadora/MainActivity.java
+--- a/app/src/main/java/com/ugb/proyectocalculadora/MainActivity.java	
++++ b/app/src/main/java/com/ugb/proyectocalculadora/MainActivity.java	
+@@ -16,97 +16,14 @@
+ 
+ public class MainActivity extends AppCompatActivity {
+ 
+-TabHost tbh;
+-
+-TextView TempVal;
+-Spinner spn;
+-Button btn;
+-
+-conversores miObj = new conversores();
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);
+ 
+-        tbh = findViewById(R.id.tbhConversores);
+-        tbh.setup();
+-
+-        tbh.addTab(tbh.newTabSpec( "LONG").setContent(R.id.tabLongitud).setIndicator("LONGITUD", null));
+-        tbh.addTab(tbh.newTabSpec( "ALM").setContent(R.id.tabAlmacenamiento).setIndicator("ALMACENAMIENTO", null));
+-        tbh.addTab(tbh.newTabSpec( "MON").setContent(R.id.tabMonedas).setIndicator("MONEDAS", null));
+-
+-        btn=findViewById(R.id.btnConvertirLongitud);
+-        btn.setOnClickListener(new View.OnClickListener() {
+-            @Override
+-            public void onClick(View v) {
+-                spn = findViewById(R.id.spnALongitud);
+-                int de = spn.getSelectedItemPosition();
+-
+-                spn = findViewById(R.id.spnDeLongitud);
+-                int a = spn.getSelectedItemPosition();
+-
+-
+-                TempVal = findViewById(R.id.txtCantidadLongitud);
+-                double cantidad = Double.parseDouble(TempVal.getText().toString());
+-
+-                double respuesta = miObj.convertir(0, de, a, cantidad);
+-                Toast.makeText(getApplicationContext(), "Respuesta: " + respuesta, Toast.LENGTH_LONG).show();
+-            }
+-        });
+ 
+-        btn=findViewById(R.id.btnConvertirAlmacenamiento);
+ 
+-        btn.setOnClickListener(new View.OnClickListener() {
+-            @Override
+-            public void onClick(View v) {
+ 
+-                spn=findViewById(R.id.spnDeAlmacenamiento);
+-                int de = spn.getSelectedItemPosition();
+-
+-                spn=findViewById(R.id.spnAAlmacenamiento);
+-                int a = spn.getSelectedItemPosition();
+-
+-                TempVal = findViewById(R.id.txtCantidadAlmacenamiento);
+-                double cantidad = Double.parseDouble(TempVal.getText().toString());
+-
+-                double respuesta = miObj.convertir(1, de, a, cantidad);
+-                Toast.makeText(getApplicationContext(), "Respuesta: " + respuesta, Toast.LENGTH_LONG).show();
+-
+-            }
+-        });
+-
+-
+-        btn= findViewById(R.id.btnConvertirMonedas);
+-        btn.setOnClickListener(new View.OnClickListener() {
+-            @Override
+-            public void onClick(View v) {
+-
+-                spn = findViewById(R.id.spnAMonedas);
+-                int a = spn.getSelectedItemPosition();
+-
+-                spn = findViewById(R.id.spnDeMonedas);
+-                int de = spn.getSelectedItemPosition();
+-
+-                TempVal = findViewById(R.id.txtCantidadMonedas);
+-                double cantidad = Double.parseDouble(TempVal.getText().toString());
+-
+-                double respuesta= miObj.convertir(2, de ,a ,cantidad);
+-                Toast.makeText(getApplicationContext(), "Respuesta "+ respuesta, Toast.LENGTH_LONG).show();
+-
+-            }
+-        });
+-
+-
+-    }
+-}
+-class conversores{
+-    double [][] valores ={
+-            {1, 100, 39.37, 3.28, 1.193, 1.09361, 0.001,0.000621371},
+-            {0.000001, 0.001, 1, 1000, 1000000,1000000000},
+-            {1,1.08,0.058,0.0067,1.26,0.13,0.041,0.027},
+-    };
+-    public double convertir (int opcion, int de, int a, double cantidad){
+-        return valores[opcion][de]*cantidad/valores[opcion][a];
+     }
+ }
+\ No newline at end of file
